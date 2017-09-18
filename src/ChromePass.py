@@ -41,14 +41,15 @@ def show_help():
 if __name__ == '__main__':
     arg = sys.argv
     args = len(arg)
+    login_data = os.getenv('LOCALAPPDATA') + '\Google\Chrome\User Data\Default\Login Data'
 
     if args == 1:
-        decrypt(os.getenv('LOCALAPPDATA') + '\Google\Chrome\User Data\Default\Login Data', '')
+        decrypt(login_data, '')
     elif args == 2:
         decrypt(arg[1], '')
     elif args == 3:
         if arg[1].upper() == '-S':
-            decrypt(os.getenv('LOCALAPPDATA') + '\Google\Chrome\User Data\Default\Login Data', arg[2])
+            decrypt(login_data, arg[2])
         else:
             show_help()
     elif args == 4:
